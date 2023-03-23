@@ -7,7 +7,7 @@
 </template>
 
 <script setup>
-import {initMapApi} from "~/util/map";
+import {initMapApi} from "~/util/mapLoadUtil";
 import {onBeforeMount, ref} from 'vue';
 import {ElAmap} from "@vuemap/vue-amap";
 
