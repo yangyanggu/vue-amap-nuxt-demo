@@ -1,21 +1,18 @@
 <template>
   <div class="map-container">
     <ClientOnly>
-      <ElAmap v-if="mapAPILoaded"></ElAmap>
+      <ElAmap></ElAmap>
     </ClientOnly>
   </div>
 </template>
 
 <script setup>
 import {initMapApi} from "~/util/mapLoadUtil";
-import {onBeforeMount, ref} from 'vue';
+import {onBeforeMount} from 'vue';
 import {ElAmap} from "@vuemap/vue-amap";
 
-const mapAPILoaded = ref(false)
-
-onBeforeMount(async () => {
-  await initMapApi()
-  mapAPILoaded.value = true
+onBeforeMount(() => {
+  initMapApi()
 })
 </script>
 
